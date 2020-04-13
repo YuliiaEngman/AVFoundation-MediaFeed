@@ -19,6 +19,10 @@ class MediaCell: UICollectionViewCell {
             mediaImageView.image = UIImage(data: imageData)
         }
         
-        //TODO: 
+        //TODO:  create video preview
+        if let videoURL = mediaObject.videoURL {
+            let image = videoURL.videoPreviewThumbnail() ?? UIImage(systemName: "heart")
+            mediaImageView.image = image
+        }
     }
 }

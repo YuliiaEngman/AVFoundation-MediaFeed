@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F275E1C2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F275E1B2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift */; };
 		0F73E5492444B9BA0019027A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E5482444B9BA0019027A /* AppDelegate.swift */; };
 		0F73E54B2444B9BA0019027A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E54A2444B9BA0019027A /* SceneDelegate.swift */; };
 		0F73E54D2444B9BA0019027A /* MediaFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E54C2444B9BA0019027A /* MediaFeedViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F275E1B2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+VideoPreviewThumbnail.swift"; sourceTree = "<group>"; };
 		0F73E5452444B9BA0019027A /* AVFoundation-MediaFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AVFoundation-MediaFeed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F73E5482444B9BA0019027A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F73E54A2444B9BA0019027A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				0F73E55C2444C0500019027A /* MediaCell.swift */,
 				0F73E55E2444C0850019027A /* HeaderView.swift */,
 				0F73E5602444C4000019027A /* MediaObject.swift */,
+				0F275E1B2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift */,
 			);
 			path = "AVFoundation-MediaFeed";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F73E55F2444C0850019027A /* HeaderView.swift in Sources */,
+				0F275E1C2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift in Sources */,
 				0F73E5612444C4000019027A /* MediaObject.swift in Sources */,
 				0F73E54D2444B9BA0019027A /* MediaFeedViewController.swift in Sources */,
 				0F73E5492444B9BA0019027A /* AppDelegate.swift in Sources */,
