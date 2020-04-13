@@ -10,4 +10,15 @@ import UIKit
 
 class MediaCell: UICollectionViewCell {
     
+    @IBOutlet weak var mediaImageView: UIImageView!
+    
+    public func configureCell(for mediaObject: MediaObject) {
+        // image or video
+        if let imageData = mediaObject.imageData {
+            // vonvert a Data object 
+            mediaImageView.image = UIImage(data: imageData)
+        }
+        
+        //TODO: 
+    }
 }

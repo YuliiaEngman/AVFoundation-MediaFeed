@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation // video playback is done on a CALayer - all views are backed e.g. if we want to make a view rounded we can only do this using the CALayer of that view, e.g. someView
+import AVKit // AVPlayerViewController lives here
 
 class MediaFeedViewController: UIViewController {
     
@@ -61,7 +63,11 @@ extension MediaFeedViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath) as? MediaCell else {
+            fatalError("could not dequeue a MediaCell")
+        }
+        let mediaObject = mediaObjects[indexPath.row]
+        cell.configureCell(for: mediaObject)
         return cell
     }
     
@@ -77,6 +83,23 @@ extension MediaFeedViewController: UICollectionViewDataSource {
 }
 
 extension MediaFeedViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mediaObject = mediaObjects[indexPath.row]
+        guard let videoURL = mediaObject.videoURL else {
+            return
+        }
+        
+        let playerViewController = AVPlayerViewController()
+        let player = AVPlayer(url: videoURL)
+        playerViewController.player = player
+        
+        present(playerViewController, animated: true)
+        
+        //play video automatically
+        player.play()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize: CGSize = UIScreen.main.bounds.size
         let itemWidth: CGFloat = maxSize.width
@@ -113,7 +136,11 @@ extension MediaFeedViewController: UIImagePickerControllerDelegate, UINavigation
                 mediaObjects.append(mediaObject) // 0 => 1
             }
         case "public.movie":
-            break
+            if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+                print("mediaURL: \(mediaURL)")
+                let mediaObject = MediaObject(imageData: nil, videoURL: mediaURL, caption: nil)
+                mediaObjects.append(mediaObject)
+            }
         default:
             print("unsupported media type")
         }

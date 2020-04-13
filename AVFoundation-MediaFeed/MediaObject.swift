@@ -12,7 +12,7 @@ import Foundation
 
 struct MediaObject {
     let imageData: Data?
-    let videoURL: String?
+    let videoURL: URL?
     let caption: String? // UI so user can enter text
     let id = UUID().uuidString // unigue id that will be stored as string
     let createDate = Date()
