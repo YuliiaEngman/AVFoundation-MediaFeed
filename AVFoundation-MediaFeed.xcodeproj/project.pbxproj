@@ -17,6 +17,7 @@
 		0F73E55D2444C0500019027A /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E55C2444C0500019027A /* MediaCell.swift */; };
 		0F73E55F2444C0850019027A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E55E2444C0850019027A /* HeaderView.swift */; };
 		0F73E5612444C4000019027A /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E5602444C4000019027A /* MediaObject.swift */; };
+		0FF7E50E2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E50C2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0F73E55C2444C0500019027A /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		0F73E55E2444C0850019027A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0F73E5602444C4000019027A /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
+		0FF7E50D2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaFeedDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				0F73E55E2444C0850019027A /* HeaderView.swift */,
 				0F73E5602444C4000019027A /* MediaObject.swift */,
 				0F275E1B2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift */,
+				0FF7E50C2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld */,
 			);
 			path = "AVFoundation-MediaFeed";
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				0F73E54D2444B9BA0019027A /* MediaFeedViewController.swift in Sources */,
 				0F73E5492444B9BA0019027A /* AppDelegate.swift in Sources */,
 				0F73E55D2444C0500019027A /* MediaCell.swift in Sources */,
+				0FF7E50E2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld in Sources */,
 				0F73E54B2444B9BA0019027A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FF7E50C2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FF7E50D2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodel */,
+			);
+			currentVersion = 0FF7E50D2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodel */;
+			path = MediaFeedDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0F73E53D2444B9BA0019027A /* Project object */;
 }
