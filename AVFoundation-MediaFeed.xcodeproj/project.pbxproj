@@ -20,6 +20,7 @@
 		0FF7E50E2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E50C2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld */; };
 		0FF7E51124461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E50F24461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift */; };
 		0FF7E51224461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E51024461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift */; };
+		0FF7E51424461C7800AAEB12 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E51324461C7800AAEB12 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0FF7E50D2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaFeedDataModel.xcdatamodel; sourceTree = "<group>"; };
 		0FF7E50F24461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMediaObject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FF7E51024461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMediaObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FF7E51324461C7800AAEB12 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				0F73E5602444C4000019027A /* MediaObject.swift */,
 				0F275E1B2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift */,
 				0FF7E50C2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld */,
+				0FF7E51324461C7800AAEB12 /* CoreDataManager.swift */,
 			);
 			path = "AVFoundation-MediaFeed";
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				0FF7E50E2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld in Sources */,
 				0FF7E51124461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift in Sources */,
 				0F73E54B2444B9BA0019027A /* SceneDelegate.swift in Sources */,
+				0FF7E51424461C7800AAEB12 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
