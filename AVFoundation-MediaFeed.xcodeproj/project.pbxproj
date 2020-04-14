@@ -18,6 +18,8 @@
 		0F73E55F2444C0850019027A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E55E2444C0850019027A /* HeaderView.swift */; };
 		0F73E5612444C4000019027A /* MediaObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E5602444C4000019027A /* MediaObject.swift */; };
 		0FF7E50E2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E50C2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld */; };
+		0FF7E51124461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E50F24461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift */; };
+		0FF7E51224461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7E51024461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0F73E55E2444C0850019027A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0F73E5602444C4000019027A /* MediaObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaObject.swift; sourceTree = "<group>"; };
 		0FF7E50D2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediaFeedDataModel.xcdatamodel; sourceTree = "<group>"; };
+		0FF7E50F24461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMediaObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FF7E51024461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMediaObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 			children = (
 				0F73E5482444B9BA0019027A /* AppDelegate.swift */,
 				0F73E54A2444B9BA0019027A /* SceneDelegate.swift */,
+				0FF7E50F24461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift */,
+				0FF7E51024461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift */,
 				0F73E54C2444B9BA0019027A /* MediaFeedViewController.swift */,
 				0F73E54E2444B9BA0019027A /* Main.storyboard */,
 				0F73E5512444B9C00019027A /* Assets.xcassets */,
@@ -155,11 +161,13 @@
 			files = (
 				0F73E55F2444C0850019027A /* HeaderView.swift in Sources */,
 				0F275E1C2444EB63001A4791 /* URL+VideoPreviewThumbnail.swift in Sources */,
+				0FF7E51224461BD600AAEB12 /* CDMediaObject+CoreDataProperties.swift in Sources */,
 				0F73E5612444C4000019027A /* MediaObject.swift in Sources */,
 				0F73E54D2444B9BA0019027A /* MediaFeedViewController.swift in Sources */,
 				0F73E5492444B9BA0019027A /* AppDelegate.swift in Sources */,
 				0F73E55D2444C0500019027A /* MediaCell.swift in Sources */,
 				0FF7E50E2446191A00AAEB12 /* MediaFeedDataModel.xcdatamodeld in Sources */,
+				0FF7E51124461BD600AAEB12 /* CDMediaObject+CoreDataClass.swift in Sources */,
 				0F73E54B2444B9BA0019027A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
