@@ -12,7 +12,7 @@ class MediaCell: UICollectionViewCell {
     
     @IBOutlet weak var mediaImageView: UIImageView!
     
-    public func configureCell(for mediaObject: MediaObject) {
+    public func configureCell(for mediaObject: CDMediaObject) {
         // image or video
         if let imageData = mediaObject.imageData {
             // vonvert a Data object 
@@ -20,8 +20,10 @@ class MediaCell: UICollectionViewCell {
         }
         
         //TODO:  create video preview
-        if let videoURL = mediaObject.videoURL {
-            let image = videoURL.videoPreviewThumbnail() ?? UIImage(systemName: "heart")
+        if let videoData = mediaObject.videoData?.convertToURL() {
+            
+            // or this ", let videoURL = videoData.convertToURL() {"
+            let image = videoData.videoPreviewThumbnail() ?? UIImage(systemName: "heart")
             mediaImageView.image = image
             
         }

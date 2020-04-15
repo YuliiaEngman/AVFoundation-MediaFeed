@@ -24,7 +24,7 @@ class MediaFeedViewController: UIViewController {
         return pickerController
     }()
     
-    private var mediaObjects = [MediaObject]() {
+    private var mediaObjects = [CDMediaObject]() {
         didSet { // property observer
             collectionView.reloadData()
             
@@ -39,6 +39,15 @@ class MediaFeedViewController: UIViewController {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             videoButton.isEnabled = false
         }
+        
+        fetchMediaObjects()
+    }
+    
+    // NSPredicate - can write filters or sorting of dsts from Core Data fetches
+    // NSFetchResultsController - similar to Firebase listener - add automatic collection reloading of modified data
+    private func fetchMediaObjects() {
+        mediaObjects = CoreDataManager.shared.fetchMediaObjects()
+        
     }
     
     private func configureCollectionView() {
@@ -60,9 +69,9 @@ class MediaFeedViewController: UIViewController {
         // we want all non-nil media objects from the media objects array
         // compactMap - because it returns all non-nil values
         
-        let videoURLs = mediaObjects.compactMap{ $0.videoURL }
+        let videoDataObjects = mediaObjects.compactMap{ $0.videoData }
         
-        if let videoURL = videoURLs.randomElement() { // randomelelment - optional - we need to do optional bindidng
+        if let videoObject = videoDataObjects.randomElement(), let videoURL = videoObject.convertToURL() { // randomelelment - optional - we need to do optional bindidng
             let player = AVPlayer(url: videoURL)
             
             // create a sublayer
@@ -117,7 +126,7 @@ extension MediaFeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mediaObject = mediaObjects[indexPath.row]
-        guard let videoURL = mediaObject.videoURL else {
+        guard let videoURL = mediaObject.videoData?.convertToURL() else {
             return
         }
         
@@ -133,7 +142,7 @@ extension MediaFeedViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize: CGSize = UIScreen.main.bounds.size
-        let itemWidth: CGFloat = maxSize.width
+        let itemWidth: CGFloat = maxSize.width * 0.95
         let itemHeight: CGFloat = maxSize.height * 0.40
         return CGSize(width: itemWidth, height: itemHeight)
     }
@@ -163,13 +172,19 @@ extension MediaFeedViewController: UIImagePickerControllerDelegate, UINavigation
         switch mediaType {
         case "public.image":
             if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage, let imageData = originalImage.jpegData(compressionQuality: 1.0){
-                let mediaObject = MediaObject(imageData: imageData, videoURL: nil, caption: nil)
+               // let mediaObject = CDMediaObject(imageData: imageData, videoURL: nil, caption: nil)
+                
+                // adds to Core Data (has nothing to do with our collection view)
+                let mediaObject = CoreDataManager.shared.createMediaObject(imageData, videoURL: nil)
+                
+                // adds to our collection view (has nothing to do with Core Data) and reload data
                 mediaObjects.append(mediaObject) // 0 => 1
             }
         case "public.movie":
-            if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+            if let mediaURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL, let image = mediaURL.videoPreviewThumbnail(), let imageData = image.jpegData(compressionQuality: 1.0) {
                 print("mediaURL: \(mediaURL)")
-                let mediaObject = MediaObject(imageData: nil, videoURL: mediaURL, caption: nil)
+                //let mediaObject = CDMediaObject(imageData: nil, videoURL: mediaURL, caption: nil)
+                let mediaObject = CoreDataManager.shared.createMediaObject(imageData, videoURL: mediaURL)
                 mediaObjects.append(mediaObject)
             }
         default:
